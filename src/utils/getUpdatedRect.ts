@@ -1,3 +1,4 @@
+import { MINIMUM_SELECTION_SIZE } from "./App.constants";
 import type { Position } from "./App.interfaces";
 
 export function getUpdatedRect(
@@ -30,7 +31,7 @@ export function getUpdatedRect(
       break;
   }
   // Prevent negative width/height
-  width = Math.max(10, width);
-  height = Math.max(10, height);
+  width = Math.max(MINIMUM_SELECTION_SIZE, width);
+  height = Math.max(MINIMUM_SELECTION_SIZE, height);
   return { x, y, width, height, color, id };
 }
